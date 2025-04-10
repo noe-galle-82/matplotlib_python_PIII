@@ -72,3 +72,34 @@ if __name__ == '__main__':
     multi_plot()  
 
     print("terminamos")
+
+def multi_plot(x, y1, y2):
+    # Dibujar múltiples líneas en un mismo gráfico
+    fig = plt.figure()
+    ax = fig.add_subplot()
+
+    ax.plot(x, y1, color='green', marker='^', label='y1 = x**2')
+    ax.plot(x, y2, color='red', marker='+', label='y2 = x**3')
+
+    ax.set_facecolor('whitesmoke')
+    ax.set_title("Dos funciones juntas")
+    ax.set_ylabel("Y [amplitud]")
+    ax.set_xlabel("X [rads]")
+    ax.set_xlim([-5, 5])     
+    ax.set_ylim([-70, 70])   # para que se vean bien los valores de x^3
+    ax.legend()
+
+    plt.show()
+if __name__ == '__main__':
+    print("Bienvenidos a otra clase con Python")
+    print("Line Plot")
+
+    x = list(np.linspace(-4, 4, 20))
+
+    y1 = [i**2 for i in x]
+    y2 = [i**3 for i in x]
+
+    multi_plot(x, y1, y2)
+
+    print("terminamos")
+
