@@ -52,8 +52,24 @@ if __name__ == '__main__':
     # Alumno: Colocar la leyenda y el label con el nombre de la función
     # Darle color a la línea a su elección
 
-    # Crear acá su gráfico
+    # Crear acá su gráfico  
 
     line_plot()
 
     print("terminamos")
+
+    # Crear una figura y un subplot
+    fig = plt.figure()
+    fig.suptitle('Gráfico de la función y = x²', fontsize=12)
+    ax = fig.add_subplot()
+
+    # Graficar x vs y
+    ax.plot(x, y, c='blue', marker='o', label='función: y = x²')
+
+    # Personalizar el gráfico
+    ax.legend()
+    ax.grid()
+    ax.set_facecolor('lavender')
+
+    # Mostrar el gráfico
+    plt.show()
