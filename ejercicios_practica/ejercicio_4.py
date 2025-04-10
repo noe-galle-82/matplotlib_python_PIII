@@ -95,3 +95,65 @@ if __name__ == '__main__':
     grid()
 
     print("terminamos")
+
+def grid(x, y1, y2, y3, y4):
+
+
+    fig = plt.figure(figsize=(10, 8))
+    fig.suptitle('Grilla con 4 funciones', fontsize=16)
+
+    # Subgráficos
+    ax1 = fig.add_subplot(2, 2, 1)
+    ax2 = fig.add_subplot(2, 2, 2)
+    ax3 = fig.add_subplot(2, 2, 3)
+    ax4 = fig.add_subplot(2, 2, 4)
+
+    # Gráfico - x²
+    ax1.plot(x, y1, color='darkred', label='y1 = x²')
+    ax1.set_facecolor('whitesmoke')
+    ax1.grid(ls='dashed')
+    ax1.set_ylabel("Y[amplitud]")
+    ax1.set_xlabel("X[rads]")
+    ax1.legend()
+
+    # Gráfico - x³
+    ax2.plot(x, y2, color='green', label='y2 = x³')
+    ax2.set_facecolor('whitesmoke')
+    ax2.grid(ls='dotted')
+    ax2.set_ylabel("Y[amplitud]")
+    ax2.set_xlabel("X[rads]")
+    ax2.legend()
+
+    # Gráfico - x⁴
+    ax3.plot(x, y3, color='orange', label='y3 = x⁴')
+    ax3.set_facecolor('whitesmoke')
+    ax3.grid(ls='dashdot')
+    ax3.set_ylabel("Y[amplitud]")
+    ax3.set_xlabel("X[rads]")
+    ax3.legend()
+
+    ax4.plot(x, y4, color='blue', label='y4 = √x')
+    ax4.set_facecolor('whitesmoke')
+    ax4.grid(ls='solid')
+    ax4.set_ylabel("Y[amplitud]")
+    ax4.set_xlabel("X[rads]")
+    ax4.legend()
+
+    # Mostrar
+    plt.tight_layout()
+    plt.show()
+if __name__ == '__main__':
+    print("Bienvenidos a otra clase con Python")
+    print("Line Plot: Figura con múltiples gráficos")
+
+    x = np.linspace(0, 10, 40)
+
+    y1 = x**2
+    y2 = x**3
+    y3 = x**4
+    y4 = np.sqrt(x)
+
+    grid(x, y1, y2, y3, y4)
+
+    print("terminamos")
+
